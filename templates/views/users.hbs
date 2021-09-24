@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Users</title>
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/user.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+    <h1> {{title}} </h1>
+    <div class="wrapper">
+        <input type="text" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    <button id="deleteBtn">DELETE</button>
+    <button id="editBtn">EDIT</button>
+    <button id="addBtn">ADD</button><br><br>
+    <table id="table">
+        <thead>
+            <th></th>
+            <th>Name</th>
+            <th>Email</th>
+        </thead>
+        <tbody id="body">
+            {{#each users}}
+            <tr>
+                <td><input type="checkbox" id="{{this._id}}"></td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+</body>
+
+</html>

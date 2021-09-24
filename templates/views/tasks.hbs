@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/task.js"></script>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    <div class="wrapper">
+        <input type="text" />
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    <button id="deleteBtn">DELETE</button>
+    <button id="editBtn">EDIT</button>
+    <button id="addBtn">ADD</button><br><br>
+    <table id="table">
+        <thead>
+            <th></th>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Owner</th>
+        </thead>
+        <tbody>
+            {{#each tasks}}
+            <tr>
+                <td><input type="checkbox" id="{{this._id}}"></td>
+                <td>{{this.task}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.status}}</td>
+                <td>{{this.owner_id.name}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+
+</html>

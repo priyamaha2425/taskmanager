@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Add Tasks</title>
+        <script src="/js/jquery-3.6.0.js"></script>
+        <script src="/js/addtask.js"></script>
+        
+    </head>
+<body>
+    <h1>{{title}} </h1>
+    <form id="userForm">
+        <label>Task</label>
+        <input type="text" id="task" value={{task.task}}><br><br>
+        <label>Description</label>
+        <input type="text" id="description" value={{task.description}}><br><br>
+        <label>Status</label>
+        <select id="status" value={{task.status}}>
+            <option value="COMPLETED">completed</option>
+            <option value="INCOMPLETED">incompleted</option>
+        </select><br><br>
+        <label>Owner</label>
+        <select id="owner_id">
+            {{#each user}}
+            <option value={{this._id}}>{{this.name}}</option>
+            {{/each}}
+        </select><br><br>
+        <input type="submit" value="Create">
+        <input type="reset">
+    </form>
+</body>
+</html>
